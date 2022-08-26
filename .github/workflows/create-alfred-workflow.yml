@@ -6,55 +6,6 @@ on:
       - 'main'
 
 jobs:
-  # build:
-  #   runs-on: macos-latest
-  #   steps:
-  #   - uses: actions/checkout@v2
-  #   - uses: actions-rs/toolchain@v1
-  #     with:
-  #       toolchain: stable
-  #       target: x86_64-apple-darwin
-  #       override: true
-  #   - uses: actions-rs/cargo@v1
-  #     with:
-  #       use-cross: true
-  #       command: build
-  #       args: --release --target "x86_64-apple-darwin"
-  #   # cache the build assets so they dont recompile every time.
-  #   - name: Cache Rust dependencies
-  #     uses: actions/cache@v1.0.1
-  #     with:
-  #       path: target
-  #       key: ${{ runner.OS }}-build-${{ hashFiles('**/Cargo.lock') }}
-  #       restore-keys: |
-  #         ${{ runner.OS }}-build-
-  #   - name: Copy executable
-  #     run: mv ./target/x86_64-apple-darwin/release/kill_process ./alfred-workflow
-  #   - name: Build Alfred Workflow
-  #     id: alfred_builder
-  #     uses: mperezi/build-alfred-workflow@v1
-  #     with:
-  #       workflow_dir: alfred-workflow
-  #   - name: Create Release
-  #     id: create_release
-  #     uses: actions/create-release@v1
-  #     env:
-  #       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #     with:
-  #       tag_name: ${{ github.ref }}
-  #       release_name: ${{ github.ref }}
-  #       draft: false
-  #       prerelease: false
-  #   - name: Upload Alfred Workflow
-  #     uses: actions/upload-release-asset@v1
-  #     env:
-  #       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #     with:
-  #       upload_url: ${{ steps.create_release.outputs.upload_url }}
-  #       asset_path: ${{ steps.alfred_builder.outputs.workflow_file }}
-  #       asset_name: ${{ steps.alfred_builder.outputs.workflow_file }}
-  #       asset_content_type: application/zip
-
   build:
     runs-on: macos-latest
 
@@ -77,16 +28,32 @@ jobs:
           override: true
       - name: Build for mac
         run: ./build.sh
+      
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files: |
+            LICENSE.txt
+            *.jar
       - name: Create Release
         id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
-          draft: false
-          prerelease: false
+        uses: "marvinpinto/action-automatic-releases@latest"
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "latest"
+        prerelease: true
+        title: "Nightly"
+        files: |
+          src/
+          Cargo.toml
+          Cargo.lock
+          README.md
+          screenshots/
+          alfred-workflow
+          build.sh
+          kitchen_knife_3d.png
+          kill-process.alfredworkflow
       - name: Upload Alfred Workflow
         uses: actions/upload-release-asset@v1
         env:
