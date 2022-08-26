@@ -28,15 +28,6 @@ jobs:
           override: true
       - name: Build for mac
         run: ./build.sh
-      
-        with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
-          prerelease: true
-          title: "Development Build"
-          files: |
-            LICENSE.txt
-            *.jar
       - name: Create Release
         id: create_release
         uses: "marvinpinto/action-automatic-releases@latest"
