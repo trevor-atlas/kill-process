@@ -31,20 +31,21 @@ jobs:
       - name: Create Release
         id: create_release
         uses: "marvinpinto/action-automatic-releases@latest"
-        repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        automatic_release_tag: "latest"
-        prerelease: true
-        title: "Nightly"
-        files: |
-          src/
-          Cargo.toml
-          Cargo.lock
-          README.md
-          screenshots/
-          alfred-workflow
-          build.sh
-          kitchen_knife_3d.png
-          kill-process.alfredworkflow
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Nightly"
+          files: |
+            src/
+            Cargo.toml
+            Cargo.lock
+            README.md
+            screenshots/
+            alfred-workflow
+            build.sh
+            kitchen_knife_3d.png
+            kill-process.alfredworkflow
       - name: Upload Alfred Workflow
         uses: actions/upload-release-asset@v1
         env:
