@@ -54,7 +54,7 @@ impl<'proclist> IconParser<'proclist> {
         let mut map = HashMap::new();
         map.insert(
             "default",
-            "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/ToolbarInfo.icns"
+            "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/ExecutableBinaryIcon.icns"
                 .to_string(),
         );
         Self { cached_icons: map }
@@ -90,8 +90,7 @@ impl<'proclist> IconParser<'proclist> {
             self.cached_icons.insert(app_path, icon_path.to_string());
             return icon_path;
         };
-        "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/ToolbarInfo.icns"
-            .to_string()
+        self.cached_icons.get("default").unwrap().to_string()
     }
 }
 
@@ -182,7 +181,6 @@ impl<'proclist> ParsedApplication<'proclist> {
 fn main() {
     let args: Vec<String> = env::args().collect();
     let mut results = AlfredList { items: Vec::new() };
-    // println!("args is: '{:?}'", args);
     if args.len() < 2 {
         println!("{}", serde_json::to_string_pretty(&results).unwrap());
         return;
@@ -190,12 +188,7 @@ fn main() {
     let query = &args[1].to_lowercase();
 
     let ps_output = Command::new("ps")
-        .args(vec![
-            "-A", "-o", "pid", "-o", "%cpu", "-o",
-            "args",
-            // "-U",
-            // &whoami_output,
-        ])
+        .args(vec!["-A", "-o", "pid", "-o", "%cpu", "-o", "args"])
         .output()
         .unwrap();
 
