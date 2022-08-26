@@ -37,21 +37,4 @@ jobs:
           prerelease: true
           title: "Nightly"
           files: |
-            src/
-            Cargo.toml
-            Cargo.lock
-            README.md
-            screenshots/
-            alfred-workflow
-            build.sh
-            kitchen_knife_3d.png
             kill-process.alfredworkflow
-      - name: Upload Alfred Workflow
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./kill-process.alfredworkflow
-          asset_name: kill-process.alfredworkflow
-          asset_content_type: application/zip
