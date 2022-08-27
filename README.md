@@ -8,6 +8,11 @@ I created this workflow because the original had a few kinks I disliked and it h
 It was also a great opportunity to learn more Rust 🦀 and build something blazing fast 🚀 <sub>/s</sub> (it is fast, though)
 
 ## FAQ
+
+> How do I get it?
+
+Download the [latest `slay.alfredworkflow` release](https://github.com/trevor-atlas/slay/releases) and open the workflow file. Alfred should import it for you!
+
 > I have a problem!
 
 See [Caveats](#caveats). If that doesn't solve your problem feel free to open an issue with a detailed description of what you expected to happen, and what actually happened. :smile:
