@@ -3,8 +3,24 @@
 **Kill Process** is an alfred workflow and spiritual successor to the tenured [Kill Process](https://www.packal.org/workflow/kill-process) which I've used for many years.
 I created this workflow because the original had a few kinks I disliked and it had a tendency to be slower than I liked.
 
-It was also a great opportunity to learn more Rust 🦀!
+It was also a great opportunity to learn more Rust 🦀 and build something blazing fast 🚀 <sub>/s</sub> (it is fast, though)
 
+## FAQ
+> I have a problem!
+
+See [Caveats](#caveats). If that doesn't solve your problem feel free to open an issue with a detailed description of what you expected to happen, and what actually happened. :smile:
+
+> Is it good?
+
+Yes.
+
+> Will it make me dinner?
+
+No.
+
+> Why did you write it like that?
+
+I'm new to Rust, if you have suggestions or enhancements I'm happy to hear about them, but please be constructive <3.
 
 
 ## Screenshots
@@ -23,7 +39,7 @@ It was also a great opportunity to learn more Rust 🦀!
 but if you encounter issues, please open a ticket (or a PR!)
 
 
-2. I am not (and probably never will be) a verified Apple developer.
+I am not (and probably never will be) a verified Apple developer.
 This means you will see a [SIP](https://developer.apple.com/documentation/security/disabling_and_enabling_system_integrity_protection) prompt when you run the workflow for the first time.
 
 <p align="center">
