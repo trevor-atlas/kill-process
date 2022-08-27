@@ -46,16 +46,21 @@ This means you will see a [SIP](https://developer.apple.com/documentation/securi
   <img width="300" alt="SIP prompt" src="./screenshots/sip.png?raw=true">
 </p>
 
-If you click `Cancel` and open `System Preferences -> Security & Privacy` you can get around this by clicking `Allow Anyway`.
+You can get around this if you:
+1. Click `Cancel`
+2. Open `System Preferences -> Security & Privacy`
+3. Click `Allow Anyway`.
 
 <p align="center">
   <img width="500" alt="where to disable SIP and allow the workflow" src="./screenshots/update-security.png?raw=true">
 </p>
 
-After completing that, the next time you run the workflow you should see another (different) SIP prompt. Click `Open` and you should be all set!
+After completing that, the next time you run the workflow you should see another (different) SIP prompt.
 
 <p align="center">
   <img width="300" alt="The final SIP" src="./screenshots/final-sip.png?raw=true">
 </p>
+
+Click `Open` and you should be all set!
 
 
