@@ -2,8 +2,8 @@ name: Build Alfred Workflow
 
 on:
   push:
-    branches:
-      - 'main'
+    tags:
+      - "v*"
 
 jobs:
   build:
@@ -33,8 +33,6 @@ jobs:
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: latest-${{ env.GITHUB_RUN_NUMBER }}-${{ env.GITHUB_RUN_ATTEMPT }}
-          prerelease: true
-          title: "Nightly"
+          prerelease: false
           files: |
             kill-process.alfredworkflow

@@ -1,9 +1,11 @@
 # kill-process
 
 **Kill Process** is an alfred workflow and spiritual successor to the tenured [Kill Process](https://www.packal.org/workflow/kill-process) which I've used for many years.
-I created this workflow because the original had a few kinks I disliked and it had a tendancy to be slower than I liked.
+I created this workflow because the original had a few kinks I disliked and it had a tendency to be slower than I liked.
 
 It was also a great opportunity to learn more Rust 🦀!
+
+
 
 ## Screenshots
 
@@ -17,8 +19,9 @@ It was also a great opportunity to learn more Rust 🦀!
 
 
 ## Caveats
-1. 🚨 I have only tested this on an M1 Macbook. I am cross compiling for intel macs so in theory everything should work fine for intel and native apple silicon macs (thanks, Rosetta!)
+**Warning:** 🚨 I have only tested this on an M1 Macbook. I am cross compiling for intel macs so in theory everything should work fine for intel and native apple silicon macs (thanks, Rosetta!)
 but if you encounter issues, please open a ticket (or a PR!)
+
 
 2. I am not (and probably never will be) a verified Apple developer.
 This means you will see a [SIP](https://developer.apple.com/documentation/security/disabling_and_enabling_system_integrity_protection) prompt when you run the workflow for the first time.
