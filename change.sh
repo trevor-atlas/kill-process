@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+#https://github.com/adamtabrams/change
+
 change_file="CHANGELOG.md"
 xdg_data_home=${XDG_DATA_HOME:-$HOME/.local/share}
 auth_dir="$xdg_data_home/change/"
