@@ -3,12 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.alfredapp.trevor.kill-process</string>
-	<key>category</key>
-	<string>Productivity</string>
+	<string>com.alfredapp.trevor.slay</string>
 	<key>connections</key>
 	<dict>
 		<key>50B0CD10-4D52-4898-9C05-DD3A34A829C3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BC63E84D-DE79-4E67-B28E-A59BEFB105B4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8CA5A599-0114-48C3-AF0D-34359C22DB61</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -25,13 +36,62 @@
 	<key>createdby</key>
 	<string>Trevor Atlas @trevoratlas</string>
 	<key>description</key>
-	<string>Swiftly find and kill processes</string>
+	<string>Swiftly find and dispatch processes</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Kill Process</string>
+	<string>Slay</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>kill</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>./slay $1</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>test.sh</string>
+				<key>subtext</key>
+				<string>type a process name</string>
+				<key>title</key>
+				<string>Kill</string>
+				<key>type</key>
+				<integer>5</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>50B0CD10-4D52-4898-9C05-DD3A34A829C3</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -71,7 +131,7 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>keyword</key>
-				<string>kill</string>
+				<string>slay</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -83,15 +143,15 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>./kill_process $1</string>
+				<string>./slay $1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string>test.sh</string>
 				<key>subtext</key>
-				<string></string>
+				<string>type a process name</string>
 				<key>title</key>
-				<string>Kill Process</string>
+				<string>Slay</string>
 				<key>type</key>
 				<integer>5</integer>
 				<key>withspace</key>
@@ -100,7 +160,7 @@
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>50B0CD10-4D52-4898-9C05-DD3A34A829C3</string>
+			<string>8CA5A599-0114-48C3-AF0D-34359C22DB61</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -114,20 +174,31 @@
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>215</integer>
+			<real>200</real>
 			<key>ypos</key>
-			<integer>110</integer>
+			<real>110</real>
+		</dict>
+		<key>8CA5A599-0114-48C3-AF0D-34359C22DB61</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<real>200</real>
+			<key>ypos</key>
+			<real>250</real>
 		</dict>
 		<key>BC63E84D-DE79-4E67-B28E-A59BEFB105B4</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>9</integer>
 			<key>xpos</key>
-			<integer>425</integer>
+			<real>430</real>
 			<key>ypos</key>
-			<integer>110</integer>
+			<real>185</real>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>

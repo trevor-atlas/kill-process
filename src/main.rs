@@ -208,7 +208,7 @@ fn main() {
                     return false;
                 }
                 let path_str = path[0].to_lowercase();
-                if path_str.contains(&format!("-{}", query)) || path_str.contains("kill_process") {
+                if path_str.contains(&format!("-{}", query)) || path_str.contains("slay") {
                     return false;
                 }
                 return path_str.contains(query);

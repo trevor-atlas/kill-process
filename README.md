@@ -1,6 +1,8 @@
-# kill-process
+# Slay
 
-**Kill Process** is an [Alfred 5](https://www.alfredapp.com/) workflow and spiritual successor to the tenured [Kill Process](https://www.packal.org/workflow/kill-process) which I've used for many years.
+<img align="left" width="50" height="50" src="./slay.png?raw=true" />
+
+**Slay** is an [Alfred 5](https://www.alfredapp.com/) workflow and spiritual successor to the tenured [Kill Process](https://www.packal.org/workflow/kill-process) which I've used for many years.
 I created this workflow because the original had a few kinks I disliked and it had a tendency to be slower than I liked.
 
 It was also a great opportunity to learn more Rust 🦀 and build something blazing fast 🚀 <sub>/s</sub> (it is fast, though)

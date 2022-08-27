@@ -35,4 +35,4 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
           files: |
-            kill-process.alfredworkflow
+            slay.alfredworkflow
